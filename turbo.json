@@ -19,7 +19,7 @@
       "outputs": []
     },
     "publish": {
-      "dependsOn": ["build", "test", "fmt"],
+      "dependsOn": ["build", "fmt"],
       "outputs": []
     },
 

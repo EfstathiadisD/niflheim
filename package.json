@@ -12,6 +12,7 @@
     "publish": "turbo run publish"
   },
   "devDependencies": {
+    "@changesets/cli": "2.25.0",
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
     "@typescript-eslint/eslint-plugin": "5.41.0",

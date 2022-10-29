@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "fmt": "tsc && prettier --write 'src/**/*.{ts,tsx}' && eslint --fix ./src",
-    "publish": "build && changesets publish"
+    "fmt": "tsc && prettier --write 'src/**/*.{ts,tsx}' && eslint --fix ./src"
   },
   "peerDependencies": {
     "typescript": "4.8.4",

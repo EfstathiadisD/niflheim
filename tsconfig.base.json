@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    /* Experimental Features */
+    "experimentalDecorators": true,
+    "importsNotUsedAsValues": "error",
+    "esModuleInterop": true,
+
+    /* TSConfig Targets and Roots */
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "typeRoots": ["node_modules/@types"],
+    "target": "ES2022",
+
+    /* TS HelperS */
+    "moduleResolution": "Node",
+    "importHelpers": true,
+    "inlineSourceMap": true,
+    "skipDefaultLibCheck": true,
+
+    /* TSConfig Paths*/
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~/core": ["packages/niflheim/core/index.ts"],
+    },
+
+    /* JS Checking */
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+
+    /* Strict Checks */
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "files": ["./@types/index.d.ts"],
+  "exclude": ["node_modules", "tmp"]
+}

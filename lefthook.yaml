@@ -1,0 +1,13 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit
+
+pre-commit:
+  commands:
+    fmt:
+      run: pnpm run fmt
+
+skip_output:
+  - meta
+  - success 

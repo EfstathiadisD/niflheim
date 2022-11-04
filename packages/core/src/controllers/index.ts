@@ -1,0 +1,3 @@
+function persistController() {
+  return null;
+}

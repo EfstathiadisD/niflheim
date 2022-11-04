@@ -22,7 +22,18 @@ function log<TPayload>(detail: { action: string; payload: TPayload }): void {
 }
 
 function distinct<TShape>(prev: TShape, curr: TShape): boolean {
-  return JSON.stringify({ ...prev }) === JSON.stringify({ ...curr });
+  if (Array.isArray(prev) && Array.isArray(curr)) {
+    if (prev.length === curr.length) {
+      return JSON.stringify({ ...prev }) === JSON.stringify({ ...curr });
+    }
+    return false;
+  }
+
+  if (typeof prev === "object" && typeof curr === "object") {
+    return JSON.stringify({ ...prev }) === JSON.stringify({ ...curr });
+  }
+
+  return prev === curr;
 }
 
 function clone<TSource>(source: TSource): TSource {

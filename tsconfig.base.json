@@ -9,6 +9,7 @@
     /* TSConfig Targets and Roots */
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "typeRoots": ["node_modules/@types"],
+    "types": ["vitest/globals"],
     "target": "ES2022",
 
     /* TS HelperS */

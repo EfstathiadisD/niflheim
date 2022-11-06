@@ -1,23 +1,16 @@
-import { Observable, BehaviorSubject, ReplaySubject } from "rxjs";
-import { distinctUntilChanged, map, take, skip, share } from "rxjs/operators";
+import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
+import { distinctUntilChanged, map, share } from "rxjs/operators";
 
 import { cache, clone, distinct } from "../utils";
-import { debug } from "../operators";
-import type { Plugin } from "../plugins";
 
-function createStore<TState>(state: TState, middlewares: { name: Plugin }[]) {
+import type { Plugin } from "~/niflheim/plugins";
+
+function createStore<TState>(state: TState, plugins: Plugin<TState>[]) {
   const state$ = new BehaviorSubject<TState>(state);
 
   function setState(action: string, setter: (state: TState) => TState): void {
-    if (middlewares.length > 0) {
-      middlewares.forEach(({ name }) => {
-        if (name === "REDUX_PLUGIN") {
-          state$.pipe(skip(1), take(1), debug(action)).subscribe();
-        }
-        if (name === "PERSIST_PLUGIN") {
-          // state$.pipe(skip(1), take(1), persist(action)).subscribe();
-        }
-      });
+    if (plugins.length > 0) {
+      plugins.map((plugin) => plugin.execute(action, state$));
     }
 
     return state$.next({

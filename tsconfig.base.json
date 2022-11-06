@@ -2,8 +2,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     /* Experimental Features */
-    "experimentalDecorators": true,
     "importsNotUsedAsValues": "error",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
 
     /* TSConfig Targets and Roots */
@@ -20,9 +21,13 @@
 
     /* TSConfig Paths*/
     "baseUrl": ".",
-    "rootDir": ".",
     "paths": {
-      "~/core": ["packages/niflheim/core/index.ts"],
+      /* Framework Agnostic */
+      "~/niflheim/core": ["packages/core/src/index.ts"],
+      "~/niflheim/plugins": ["packages/plugins/src/index.ts"],
+
+      /* Framework Specific */
+      "~/niflheim/react": ["packages/react/src/index.ts"]
     },
 
     /* JS Checking */
@@ -36,7 +41,7 @@
     "allowUnusedLabels": false,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "files": ["./@types/index.d.ts"],
   "exclude": ["node_modules", "tmp"]

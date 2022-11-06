@@ -1,5 +1,5 @@
 {
-  "name": "@niflheim/core",
+  "name": "@niflheim/plugins",
   "sideEffects": false,
   "type": "module",
   "scripts": {

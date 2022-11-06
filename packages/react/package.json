@@ -1,5 +1,5 @@
 {
-  "name": "@niflheim/core",
+  "name": "@niflheim/react",
   "sideEffects": false,
   "type": "module",
   "scripts": {
@@ -8,7 +8,8 @@
     "fmt": "tsc && prettier --write 'src/**/*.{ts,tsx}' && ESLINT_USE_FLAT_CONFIG=false eslint --fix ./src"
   },
   "peerDependencies": {
-    "rxjs": "7.5.7",
-    "typescript": "4.8.4"
+    "react": "^17.0.0 || ^18.0.0",
+    "rxjs": "^7.5.0",
+    "typescript": "^4.8.0"
   }
 }
